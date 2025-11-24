@@ -1,5 +1,5 @@
 {
-  "name": "@solomonlegal-ai/pdfium",
+  "name": "@solomon_ai/pdfium",
   "version": "2.1.9",
   "description": "Universal wrapper for PDFium",
   "type": "module",
@@ -42,7 +42,6 @@
     "build:watch": "rollup --config rollup.config.mjs --watch",
     "build:prod": "rollup --config rollup.config.mjs --environment NODE_ENV:production",
     "prepublishOnly": "npm run build:prod",
-    "postinstall": "npm install && npm run build:prod",
     "clean": "rm -rf dist",
     "check:fix": "biome check --write",
     "check:ci": "biome ci",
@@ -82,7 +81,6 @@
     "vitest": "^2.0.5"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
     "access": "restricted"
   },
   "========== Tools ==========": "",

@@ -7,6 +7,7 @@ export type PDFiumPageRenderCallback = (options: PDFiumPageRenderOptions) => Pro
 export type PDFiumPageRenderParams = {
   render: PDFiumPageRenderFunction;
   renderFormFields?: boolean;
+  renderAnnotations?: boolean;
 } & (
   | {
       scale: number;

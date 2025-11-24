@@ -127,7 +127,11 @@ export class PDFiumPage {
       0xffffffff, // color (white)
     );
 
-    const flags = FPDFRenderFlag.REVERSE_BYTE_ORDER | FPDFRenderFlag.ANNOT | FPDFRenderFlag.LCD_TEXT;
+    let flags = FPDFRenderFlag.REVERSE_BYTE_ORDER | FPDFRenderFlag.LCD_TEXT;
+    if (options.renderAnnotations !== false) {
+      // Default to true: include annotations (highlights, sticky notes, ink, etc.)
+      flags |= FPDFRenderFlag.ANNOT;
+    }
 
     this.module._FPDF_RenderPageBitmap(
       bitmap,
